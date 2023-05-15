@@ -1,9 +1,13 @@
 import pytest
+import os
+
+from dotenv.main import dotenv
 from jose import jwt
 from app import schemas
 
 from app.config import settings
 
+local_dotenv()
 
 def test_create_user(client):
     res = client.post(
@@ -19,7 +23,7 @@ def test_login_user(test_user, client):
         "/login", data={"username": test_user['email'], "password": test_user['password']})
     login_res = schemas.Token(**res.json())
     payload = jwt.decode(login_res.access_token,
-                         settings.secret_key, algorithms=[settings.algorithm])
+                         os.getenv.get("SECRET_KEY"), algorithms=[os.getenv.get("ALGORITHM")])
     id = payload.get("user_id")
     assert id == test_user['id']
     assert login_res.token_type == "bearer"
