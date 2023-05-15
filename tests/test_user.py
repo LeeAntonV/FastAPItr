@@ -11,7 +11,7 @@ local_dotenv()
 
 def test_create_user(client):
     res = client.post(
-        "/users/", json={"email": "test_email@gmail.com", "password": "password123","name":"test_name","surname":"test_surname"}
+        "/users/", json={"email": "test_email@gmail.com", "password": "password123","Name":"test_name","Surname":"test_surname"}
 
     new_user = schemas.StudentOut(**res.json())
     assert new_user.email == "test_email@gmail.com"
