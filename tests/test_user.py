@@ -9,7 +9,7 @@ def test_create_user(client):
     res = client.post(
         "/users/", json={"email": "test_email@gmail.com", "password": "password123"})
 
-    new_user = schemas.Teacher(**res.json())
+    new_user = schemas.StudentOut(**res.json())
     assert new_user.email == "test_email@gmail.com"
     assert res.status_code == 201
 
