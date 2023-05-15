@@ -9,8 +9,7 @@ from dotenv import load_dotenv
 def configure():
     load_dotenv()
 
-
-DATABASE_URL = f'postgresql://{os.getenv("DATABASE_USERNAME")}:{os.getenv("DATABASE_PASSWORD")}@{os.getenv("DATABASE_HOSTNAME")}:{os.getenv("DATABASE_PORT")}/{os.getenv("DATABASE_NAME")}'
+DATABASE_URL = f'postgresql://{os.environ.get("DATABASE_USERNAME")}:{os.environ.get("DATABASE_PASSWORD")}@{os.environ.get("DATABASE_HOSTNAME")}:{os.environ.get("DATABASE_PORT")}/{os.environ.get("DATABASE_NAME")}'
 
 engine = create_engine(DATABASE_URL)
 
