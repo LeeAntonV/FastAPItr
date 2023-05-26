@@ -7,7 +7,11 @@ from app import schemas
 
 from app.config import settings
 
-local_dotenv()
+def configure():
+        load_dotenv()
+def main():
+        configure()
+main()
 
 def test_create_user(client):
     res = client.post(
