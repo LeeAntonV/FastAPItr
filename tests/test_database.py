@@ -8,6 +8,7 @@ from app.main import app
 from app.config import settings
 from app.database import get_db
 from app.database import Base
+from dotenv import load_dotenv
 
 def configure():
         load_dotenv()
