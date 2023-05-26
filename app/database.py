@@ -8,6 +8,10 @@ from dotenv import load_dotenv
 
 def configure():
     load_dotenv()
+    
+def main():
+    configure()
+main()
 
 DATABASE_URL = f'postgresql://{os.environ.get("DATABASE_USERNAME")}:{os.environ.get("DATABASE_PASSWORD")}@{os.environ.get("DATABASE_HOSTNAME")}:{os.environ.get("DATABASE_PORT")}/{os.environ.get("DATABASE_NAME")}'
 
