@@ -7,13 +7,8 @@ from sqlalchemy.orm import Session
 from typing import Annotated
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl='login')
 
-# SECRET_KEY
-# Algorithm
-# Expriation time
 
-SECRET_KEY = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjEzMzciLCJ1c2VybmFtZSI6ImJpem9uZSIsImlhdCI6MTU5NDIwOTYwMCwicm9sZSI6InVzZXIifQ.ZvkYYnyM929FM4NW9_hSis7_x3_9rymsDAx9yuOcc1I"
-ALGORITHM = "HS256"
-
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 
 def create_access_token(data: dict):
