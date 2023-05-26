@@ -7,6 +7,12 @@ from sqlalchemy.orm import Session
 from typing import Annotated
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl='login')
 
+def configure():
+        load_dotenv()
+        
+def main():
+        configure()
+main()
 
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
