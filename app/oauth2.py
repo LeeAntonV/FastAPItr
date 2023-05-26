@@ -15,6 +15,7 @@ def main():
 main()
 
 SECRET_KEY = os.environ.get("SECRET_KEY")
+ALGORITHM = os.environ.get("ALHORITHM")
 
 
 def create_access_token(data: dict):
