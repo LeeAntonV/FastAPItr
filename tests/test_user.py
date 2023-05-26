@@ -1,7 +1,7 @@
 import pytest
 import os
 
-from dotenv.main import dotenv
+from dotenv import load_dotenv
 from jose import jwt
 from app import schemas
 
